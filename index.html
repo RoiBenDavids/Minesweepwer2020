@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>MineSweeper</title>
+    <link rel="stylesheet" href="css/app.css" />
+</head>
+
+<body onload="init()">
+
+    <div class="game-container">
+        <h1>Minesweeper 2020</h1>
+        <div class="levels">
+            <div class="level" onclick="changeLevel(4,2,this)">easy</div>
+            <div class="level" onclick="changeLevel(8,12,this)">medium</div>
+            <div class="level" onclick="changeLevel(12,15,this)">hard</div>
+
+        </div>
+        <div class="timer-container">Time Passed:
+            <span class="timer">0</span>
+        </div>
+        <div class="restart" onclick="init()">😀</div>
+        <table class="board" >
+
+        </table>
+
+    </div>
+
+    <script src="js/util.js"></script>
+    <script src="js/game.js"></script>
+
+</body>
