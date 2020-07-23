@@ -352,6 +352,8 @@ function checkNumOfFlags() {
 
 function undoMove() {
     if (!gGame.moves[0]) { return; }
+    gGame.isOn = true;
+    renderEmoji('on')
     var lastMove = gGame.moves.pop();
     gGame.shownCount--;
 
@@ -359,10 +361,8 @@ function undoMove() {
         gBoard[lastMove.i][lastMove.j].isShown = false
 
     } else if (lastMove.move === 'dead') {
-        gGame.isOn = true;
         gBoard[lastMove.i][lastMove.j].isShown = false
         gBoard[lastMove.i][lastMove.j].isExpload = false
-        renderEmoji('on')
         gGame.livesLeft++
         renderLives();
         renderCheats()
