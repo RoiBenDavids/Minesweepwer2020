@@ -10,20 +10,35 @@
 <body onload="init()">
 
     <div class="game-container">
+        <div class="director-modal">
+            <h3>you have <span></span> mines left</h3>
+            <button onclick="intialDirector()">start game</button>
+        </div>
         <h1>Minesweeper 2020</h1>
         <div class="levels">
-            <div class="level" onclick="changeLevel(4,2,this)">easy</div>
-            <div class="level" onclick="changeLevel(8,12,this)">medium</div>
-            <div class="level" onclick="changeLevel(12,15,this)">hard</div>
+            <div class="level" onclick="changeLevel(4,2,this)">EASY</div>
+            <div class="level" onclick="changeLevel(8,12,this)">MEDIUM</div>
+            <div class="level" onclick="changeLevel(12,15,this)">HARD</div>
 
         </div>
         <div class="timer-container">Time Passed:
             <span class="timer">0</span>
         </div>
+        <div class="undo" onclick="undoMove()">↩️</div>
+        <div class="director-mode" onclick="toggleDirector()">🎬</div>
+        <div class="sos-mode" onclick="toggleCheats()">🆘</div>
         <div class="restart" onclick="init()">😀</div>
-        <table class="board" >
 
+        <table class="board">
         </table>
+        <div class="cheats" >
+            <div class="hint cheat" onclick="getHint(this)">💡</div>
+            <div class="hint cheat" onclick="getHint(this)">💡</div>
+            <div class="hint cheat" onclick="getHint(this)">💡</div>
+            <div class="cheat live">💛</div>
+            <div class="cheat live">💛</div>
+            <div class="cheat live">💛</div>
+        </div>
 
     </div>
 
