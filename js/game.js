@@ -289,6 +289,7 @@ function gameOver(didWin, i, j) {
         gTimerInterval = null;
         gBoard[i][j].isExpload = true;
         gGame.isOn = false;
+        gGame.livesLeft--;
         gGame.lastCell = BOMB;
         gGame.moves.push({ i, j, move: 'dead' })
         renderEmoji('dead');
@@ -353,7 +354,6 @@ function undoMove() {
     if (!gGame.moves[0]) { return; }
     var lastMove = gGame.moves.pop();
     gGame.shownCount--;
-    console.log(lastMove.move);
 
     if (lastMove.move === 'show') {
         gBoard[lastMove.i][lastMove.j].isShown = false
